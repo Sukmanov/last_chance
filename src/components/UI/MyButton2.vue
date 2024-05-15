@@ -1,5 +1,7 @@
 <script>
   export default {
+    name: 'my-button-2',
+
     props: {
       textButton: {
         type: String,
@@ -18,6 +20,9 @@
 .button2 {
   background-color: transparent;
   color: white;
+
+  width: 200px;
+  height: 50px;
 
   border: none;
 
