@@ -17,15 +17,22 @@ export default {
 
 <template>
   <div id="block">
-    <img src="../../../images/logo.png" alt="" id="image">
-    <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
-    <my-button-2 :textButton="'Войти'" @click="Login"></my-button-2>
+    <div class="top-header-elems">
+      <img src="../../../images/logo.png" alt="" id="image">
+
+    </div>
+    <div class="top-header-elems">
+      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
+    </div>
+    <div class="top-header-elems">
+      <my-button-2 :textButton="'Войти'" @click="Login"></my-button-2>
+
+    </div>
   </div>
 </template>
 
 <style>
 
-/*нужно разместить кнопки и картинку*/
 #block {
   display: flex;
   justify-content: space-between;
@@ -44,6 +51,10 @@ export default {
 #image {
   width: 80px;
   height: 80px;
+}
+
+.top-header-elems {
+  width: 80px;
 }
 
 </style>
