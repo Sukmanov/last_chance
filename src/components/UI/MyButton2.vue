@@ -21,7 +21,7 @@
   background-color: transparent;
   color: white;
 
-  width: 200px;
+  width: 50px;
   height: 50px;
 
   border: none;
