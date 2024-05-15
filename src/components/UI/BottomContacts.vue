@@ -15,8 +15,8 @@ export default {
     </div>
 
     <div id="contacts">
-      <my-button-2 :textButton="'Контакты'" class="block-button" id="contacts-button"></my-button-2>
-      <button id="telegram-button">
+      <my-button-2 :textButton="'Контакты'" id="contacts-button"></my-button-2>
+      <button id="telegram-button" >
         <img src="../../../images/Vector.png" alt="" id="image-telegram">
       </button>
     </div>
@@ -32,6 +32,11 @@ export default {
 .block-button {
   display: flex;
   width: 100%;
+}
+
+#contacts {
+  display: flex;
+  flex-direction: column;
 }
 
 #image-telegram {
@@ -52,6 +57,7 @@ export default {
   background-color: #101010;
   border-radius: 50px;
   border: none;
+  float: right;
 }
 
 </style>
