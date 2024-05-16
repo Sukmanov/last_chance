@@ -25,7 +25,7 @@ export default {
   height: 60px;
 
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
 
