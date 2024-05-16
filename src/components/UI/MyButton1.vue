@@ -19,15 +19,16 @@ export default {
 .button1 {
 
   border: white solid 1px;
-  border-radius: 25px;
+  border-radius: 30px;
 
-  width: 200px;
-  height: 50px;
+  width: 260px;
+  height: 60px;
 
   font-size: 20px;
   font-weight: 600;
-
+  font-family: "Rubik", sans-serif;
   color: white;
+
   background-color: transparent;
 
   margin: 10px 10px 10px 10px;
