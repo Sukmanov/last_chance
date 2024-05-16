@@ -12,15 +12,14 @@
       <div id="site-info">
         <span id="service-name">MoWhee</span>
         <p id="service-description">Социальная платформа любителей кино, объединяющая киноманов со всего мира</p>
-        <my-button-1 @click="" :textButton="'Смотреть'"></my-button-1>
+        <my-button-1 @click="" :textButton="'Выбрать фильм'"></my-button-1>
       </div>
 
       <div id="main-page-image">
-        <img id="main-image" src="" alt="">
+        <img id="main-image" src="../../../images/MainPageImg.png" alt="">
       </div>
 
     </div>
-
 
 </template>
 
@@ -28,18 +27,16 @@
 
 #main-page-container {
   width: 70%;
-  margin: 0 auto 0 auto;
-  border: red solid 1px;
+  margin: 150px auto 300px auto;
   display: flex;
+  align-items: center;
 }
 
 #site-info {
-  border: red solid 1px;
   width: 50%;
 }
 
 #main-page-image {
-  border: red solid 1px;
   width: 50%;
 }
 
@@ -51,10 +48,12 @@
 }
 
 #service-description {
+  width: 60%;
   font-size: 20px;
   font-weight: 300;
   font-family: "Rubik", sans-serif;
   color: white;
+  margin-bottom: 30px;
 }
 
 </style>

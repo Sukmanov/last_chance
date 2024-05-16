@@ -2,64 +2,52 @@
   export default {
     name: "film",
 
-    props: {
-      filmName: {
-        type: String,
-        required: true,
-      },
-      filmDescription: {
-        type: String,
-        required: true,
-      },
-      filmRating: {
-        type: Number,
-        required: true,
-      },
-      imagePath: {
-        type: String,
-        required: true,
-      },
-      directors: {
-        type: String,
-        required: true,
+    data() {
+      return {
+        imagePath: require('../../../images/poster.png')
       }
     }
-
   }
 </script>
 
 <template>
-  <img src="" alt="" id="film-poster">
 
   <div class="film">
-    <!--========================================-->
 
-    <div id="info">
-      <span v-text="filmName" id="film-name"></span>
-      <p v-text="filmDescription" id="film-description"></p>
-      <div id="button-and-rating">
+    <div id="a1">
+      <div><span id="film-name">Охотники</span></div>
+      <div><p id="film-describe">adfsjf sdhfjha jkd ajksdhf jh asd hsdj f hjsadh fjh  dashfjsadhfj h ajksdhf jash f</p></div>
+
+      <div id="button-rating">
         <div><my-button-1 :textButton="'Смотреть'"></my-button-1></div>
-        <div><span v-text="filmRating" id="film-rating"></span></div>
-        <div><img id="img-star" src="../../../images/Star1.png" alt=""></div>
+        <div><span id="film-rating">5</span></div>
+        <div><img src="../../../images/Star1.png" alt=""></div>
       </div>
     </div>
 
-    <!--========================================-->
-    <div id="container">
-      <div id="film-poster">
-      </div>
-
-      <div id="directors">
-        <span id="director-film">Hdafsd
-        </span>
-      </div>
+    <div id="a2">
+      <div><img id="film-image" :src="imagePath" alt=""></div>
+      <div><p id="directors">DIrectors</p></div>
     </div>
-    <!--========================================-->
+
 
   </div>
 </template>
 
 <style>
+
+#a1 {
+  border: 1px solid red;
+  flex-grow: 1;
+  width: 40%;
+}
+
+#a2 {
+  border: 1px solid red;
+  flex-grow: 1;
+  width: 40%;
+
+}
 
 .film {
   border: 1px solid white;
@@ -68,65 +56,52 @@
 
   padding: 30px 80px 90px;
 
-  width: 50%;
+  width: 70%;
   height: auto;
 
   display: flex;
+
+  margin: 0 auto;
 }
 
 #film-name {
   color: white;
-
-  font-size: 50px;
-  font-weight: 600;
-  font-family: "Rubik", sans-serif;
-
-  margin-bottom: 90px;
-}
-
-#film-description {
-  color: white;
-
-  font-size: 20px;
+  font-size: 55px;
   font-weight: 300;
   font-family: "Rubik", sans-serif;
 }
 
-#info {
-  display: inline-block;
-  width: 800px;
-}
-
-#film-rating {
+#film-describe {
   color: white;
-
-  font-size: 60px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 300;
   font-family: "Rubik", sans-serif;
-
 }
 
-#button-and-rating {
+#button-rating {
   display: flex;
   align-items: center;
 }
 
-#img-star {
-  width: 50px;
-  height: 50px;
+#film-rating {
+  color: white;
+  font-size: 55px;
+  font-weight: 300;
+  font-family: "Rubik", sans-serif;
+}
+
+#film-image {
+  width: 100%;
+  height: 90%;
+  margin-bottom: 10px;
 }
 
 #directors {
   color: white;
-  text-align: right ;
-  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  font-family: "Rubik", sans-serif;
+  float: right;
 }
-
-#container {
-  display: inline-block;
-}
-
-
-
 
 </style>

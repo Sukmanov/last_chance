@@ -9,7 +9,11 @@
     <my-input-1 nameInput="Пароль" id="password-button"></my-input-1>
     <my-button-2 textButton="Забыли пароль ?" id="forget-pass-button"></my-button-2>
     <my-button-1 textButton="Вход" id="login-button"></my-button-1>
-    <my-button-2 textButton="Еще нет аккаунта ? Регистрация" id="forget-pass-button"></my-button-2>
+    <my-button-2
+        textButton="Еще нет аккаунта ? Регистрация"
+        id="forget-pass-button"
+        @click="$router.push('/registration')"
+    ></my-button-2>
 
   </div>
 </template>

@@ -25,7 +25,7 @@ export default {
       <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
     </div>
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Войти'" @click="Login"></my-button-2>
+      <my-button-2 :textButton="'Войти'" @click="$router.push('/login')"></my-button-2>
 
     </div>
   </div>
