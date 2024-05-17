@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: "CommentsList",
+    name: "comments-list",
 
     props: {
       comments: {
@@ -23,7 +23,7 @@
 
 <template>
   <div class="comments-list" v-for="comment1 in comments2">
-    <comment :NickName="comment1.username" :Comment="comment1.comment"></comment>
+    <comment :Nickname="comment1.username" :Comment="comment1.comment"></comment>
   </div>
 </template>
 

@@ -29,7 +29,7 @@ export default {
     <span id="director">{{FilmDirector}}</span>
     <span id="actors">{{FilmActros}}</span>
     <p id="description">{{FilmDescription}}</p>
-    <my-button-1 :textButton="'Смотреть'"></my-button-1>
+<!--    <my-button-1 :textButton="'Смотреть'"></my-button-1>-->
   </div>
 </template>
 

@@ -9,6 +9,8 @@ import FilmInfo from "@/components/UI/FilmInfo.vue";
 import RatingMenu from "@/components/UI/ratingMenu.vue";
 import Comment from "@/components/UI/Comment.vue"
 import CommentsList from "@/components/UI/CommentsList.vue";
+import Achievement from "@/components/UI/achievement.vue";
+import AchievementList from "@/components/UI/AchievementList.vue";
 
 export default [
     MyButton1,
@@ -22,4 +24,6 @@ export default [
     RatingMenu,
     Comment,
     CommentsList,
+    Achievement,
+    AchievementList,
 ]
