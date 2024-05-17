@@ -52,7 +52,8 @@
 }
 
 #achievement-grid{
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
+  justify-items: center;
 }
 
 #daily-achievements {
