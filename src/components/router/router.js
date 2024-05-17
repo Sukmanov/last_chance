@@ -3,6 +3,8 @@ import Login from "@/components/pages/Login"
 import Registration from "@/components/pages/Registration"
 
 import {createRouter, createWebHistory} from "vue-router";
+import MovieCatalog from "@/components/pages/MovieCatalog.vue";
+import FilmPage from "@/components/pages/FilmPage.vue"
 
 
 const routes = [
@@ -19,6 +21,16 @@ const routes = [
         path: '/registration',
         name: 'Registration',
         component: Registration,
+    },
+    {
+        path: '/MovieCatalog',
+        name: 'MovieCatalog',
+        component: MovieCatalog,
+    },
+    {
+        path: '/FilmPage',
+        name: 'FilmPage',
+        component: FilmPage,
     }
 ]
 

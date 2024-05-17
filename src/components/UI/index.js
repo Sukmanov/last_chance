@@ -7,6 +7,8 @@ import Film from "@/components/UI/film.vue";
 import ArrFilms from "@/components/UI/arr-films.vue"
 import FilmInfo from "@/components/UI/FilmInfo.vue";
 import RatingMenu from "@/components/UI/ratingMenu.vue";
+import Comment from "@/components/UI/Comment.vue"
+import CommentsList from "@/components/UI/CommentsList.vue";
 
 export default [
     MyButton1,
@@ -18,4 +20,6 @@ export default [
     ArrFilms,
     FilmInfo,
     RatingMenu,
+    Comment,
+    CommentsList,
 ]
