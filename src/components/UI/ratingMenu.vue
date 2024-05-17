@@ -11,7 +11,7 @@
       <div id="rate">
 
           <span id="number-rate">9</span>
-          <img src="../../../images/Star1.png" alt="" id="image">
+          <img src="../../../images/Star 1.png" alt="" id="image">
       </div>
 
       <span id="text">По версии юзеров</span>

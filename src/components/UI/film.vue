@@ -25,7 +25,7 @@
 
     data() {
       return {
-        imagePath: require('../../../images/poster.png')
+        imagePath: require('../../../images/Постер.png')
       }
     }
   }
@@ -43,7 +43,7 @@
         <!--     Добавить id поста в query   -->
         <my-button-1 @click="$router.push('/FilmPage')" :textButton="'Смотреть'"></my-button-1>
         <div><span id="film-rating" v-text="filmRating"></span></div>
-        <div><img src="../../../images/Star1.png" alt=""></div>
+        <div><img id="id-star" src="../../../images/Star 1.png" alt=""></div>
       </div>
     </div>
 
@@ -124,6 +124,11 @@
   font-weight: 300;
   font-family: "Rubik", sans-serif;
   float: right;
+}
+
+#id-star {
+  width: 40px;
+  height: 40px;
 }
 
 </style>

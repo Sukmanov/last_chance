@@ -6,6 +6,7 @@
 
 <template>
   <top-header></top-header>
+  <div id="main-page">
 
     <div id="main-page-container">
 
@@ -16,14 +17,23 @@
       </div>
 
       <div id="main-page-image">
-        <img id="main-image" src="../../../images/MainPageImg.png" alt="">
+        <img id="main-image" src="../../../images/Group 30.png" alt="">
       </div>
 
     </div>
 
+  </div>
+
 </template>
 
 <style>
+
+#main-page {
+  width: 100%;
+  display: flex;
+  background-image: url("../../../images/film 1.png");
+  background-size: contain;
+}
 
 #main-page-container {
   width: 70%;
