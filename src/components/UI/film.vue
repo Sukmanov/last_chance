@@ -1,6 +1,27 @@
 <script>
+
   export default {
     name: "film",
+
+    props: {
+        filmName: {
+          type: String,
+          required: true,
+        },
+        filmDescription: {
+          type: String,
+          required: true,
+        },
+        filmRating: {
+          type: Number,
+          required: true,
+        },
+        filmImgPath: {
+          type: String,
+          required: true,
+        }
+
+    },
 
     data() {
       return {
@@ -15,19 +36,20 @@
   <div class="film">
 
     <div id="a1">
-      <div><span id="film-name">Охотники</span></div>
-      <div><p id="film-describe">adfsjf sdhfjha jkd ajksdhf jh asd hsdj f hjsadh fjh  dashfjsadhfj h ajksdhf jash f</p></div>
+      <div><span id="film-name" v-text="filmName"></span></div>
+      <div><p id="film-describe" v-text="filmDescription"></p></div>
 
       <div id="button-rating">
-        <div><my-button-1 :textButton="'Смотреть'"></my-button-1></div>
-        <div><span id="film-rating">5</span></div>
+        <!--     Добавить id поста в query   -->
+        <my-button-1 @click="$router.push('/FilmPage')" :textButton="'Смотреть'"></my-button-1>
+        <div><span id="film-rating" v-text="filmRating"></span></div>
         <div><img src="../../../images/Star1.png" alt=""></div>
       </div>
     </div>
 
     <div id="a2">
       <div><img id="film-image" :src="imagePath" alt=""></div>
-      <div><p id="directors">DIrectors</p></div>
+      <div><p id="directors">film.Directors</p></div>
     </div>
 
 
@@ -56,12 +78,12 @@
 
   padding: 30px 80px 90px;
 
-  width: 70%;
+  width: 60%;
   height: auto;
 
   display: flex;
 
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 #film-name {

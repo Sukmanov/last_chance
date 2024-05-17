@@ -12,7 +12,7 @@
       <div id="site-info">
         <span id="service-name">MoWhee</span>
         <p id="service-description">Социальная платформа любителей кино, объединяющая киноманов со всего мира</p>
-        <my-button-1 @click="" :textButton="'Выбрать фильм'"></my-button-1>
+        <my-button-1 @click="$router.push('/MovieCatalog')" :textButton="'Выбрать фильм'"></my-button-1>
       </div>
 
       <div id="main-page-image">

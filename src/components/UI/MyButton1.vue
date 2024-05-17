@@ -31,7 +31,7 @@ export default {
 
   background-color: transparent;
 
-  margin: 10px 10px 10px 10px;
+  margin: 0 0 0 0;
 }
 
 .button1:hover {

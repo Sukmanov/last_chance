@@ -19,9 +19,9 @@
 
 
     <div id="right-rating">
-      <span id="stars-percent">7-10 34%</span>
-      <span id="stars-percent">4-6 63%</span>
-      <span id="stars-percent">1-3 12%</span>
+      <div id="stars-percent">7-10 34%</div>
+      <div id="stars-percent">4-6 63%</div>
+      <div id="stars-percent">1-3 12%</div>
     </div>
   </div>
 </template>
@@ -50,10 +50,10 @@
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
-  border: 1px solid yellow;
 }
 
 #left-rating {
+  border: 1px solid red;
   width: 50%;
   display: flex;
   align-items: center;
@@ -62,6 +62,7 @@
 }
 
 #right-rating {
+  border: 1px solid red;
 
   width: 50%;
   display: flex;
@@ -73,8 +74,6 @@
 }
 
 #rate {
-  display: flex;
-  align-items: center;
   flex: 1;
 }
 
@@ -89,6 +88,7 @@
   font-family: "Rubik", sans-serif;
   color: white;
   flex: 1;
+  border: 1px solid yellow;
 }
 
 </style>

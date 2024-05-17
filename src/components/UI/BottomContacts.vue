@@ -60,4 +60,8 @@ export default {
   float: right;
 }
 
+#block {
+  height: 200px;
+}
+
 </style>
