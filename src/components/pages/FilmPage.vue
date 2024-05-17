@@ -1,6 +1,5 @@
 <script>
 
-
   export default {
     data() {
       return{
@@ -32,14 +31,17 @@
                :FilmActros="films.actors"
                :FilmDirector="films.director"
                :FilmName="films.name"></film-info>/
-  <rating-menu></rating-menu>
-  <comment-list></comment-list>
+  <rating-menu id="menu-rating"></rating-menu>
+  <comments-list></comments-list>
   <bottom-contacts></bottom-contacts>
 
 </template>
 
 <style>
 
+#menu-rating {
+  margin: 50px auto 50px auto ;
+}
 
 
 </style>
