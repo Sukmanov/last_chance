@@ -59,13 +59,13 @@
 <style>
 
 #a1 {
-  border: 1px solid red;
+
   flex-grow: 1;
   width: 40%;
 }
 
 #a2 {
-  border: 1px solid red;
+
   flex-grow: 1;
   width: 40%;
 

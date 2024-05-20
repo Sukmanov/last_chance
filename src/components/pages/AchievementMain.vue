@@ -12,7 +12,7 @@
       </div>
 
       <achievement-list id="achievement-grid"></achievement-list>
-      <my-button-1 @click="$router('/DailyAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
+      <my-button-1 @click="$router.push('/DailyAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
     </div>
     <div id="daily-achievements">
 
@@ -21,7 +21,7 @@
       </div>
 
       <achievement-list id="achievement-grid"></achievement-list>
-      <my-button-1 id="watch-all" :textButton="'посмотреть все'"></my-button-1>
+      <my-button-1 @click="$router.push('/ConstAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
     </div>
   </div>
 
