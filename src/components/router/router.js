@@ -7,6 +7,7 @@ import MovieCatalog from "@/components/pages/MovieCatalog.vue";
 import FilmPage from "@/components/pages/FilmPage.vue"
 import AchievementMain from "@/components/pages/AchievementMain.vue"
 import DailyAchievementsCatalog from "@/components/pages/DailyAchievementsCatalog.vue"
+import PersonalProfile from "@/components/pages/PersonalProfile.vue"
 
 
 const routes = [
@@ -43,6 +44,11 @@ const routes = [
         path: '/DailyAchievementCatalog',
         name: 'DailyAchievementCatalog',
         component: DailyAchievementsCatalog,
+    },
+    {
+        path: '/PersonalProfile',
+        name: 'PersonalProfile',
+        component: PersonalProfile,
     }
 ]
 
