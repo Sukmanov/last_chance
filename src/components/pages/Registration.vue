@@ -3,6 +3,9 @@
 </script>
 
 <template>
+  <div class="div-back">
+    <my-button-2 id="button-back" :textButton="'Главная страница'" @click="$router.push('/')"></my-button-2>
+  </div>
   <div class="login-container">
     <span id="text-login">Зарегистрируйтесь</span>
     <my-input-1 nameInput="Логин" id="login-button"></my-input-1>
