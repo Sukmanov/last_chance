@@ -28,7 +28,7 @@
 
 .achievement {
   display: flex;
-  width: 220px;
+  width: 180px;
   margin: 0 auto 30px;
   border: 1px solid white;
   border-radius: 20px;
