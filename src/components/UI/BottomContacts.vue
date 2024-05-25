@@ -17,7 +17,7 @@ export default {
     <div id="contacts">
       <my-button-2 :textButton="'Контакты'" id="contacts-button"></my-button-2>
       <button id="telegram-button" >
-        <img src="../../../images/Vector.png" alt="" id="image-telegram">
+        <img src="https://i.yapx.ru/XeOa4.png" alt="" id="image-telegram">
       </button>
     </div>
   </div>

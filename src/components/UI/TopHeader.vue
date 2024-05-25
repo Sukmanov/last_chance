@@ -18,7 +18,7 @@ export default {
 <template>
   <div id="block">
     <div class="top-header-elems">
-      <img src="../../../images/logo.png" alt="" id="image">
+      <img src="https://i.yapx.ru/XeOOO.png" alt="" id="image">
 
     </div>
     <div class="top-header-elems">

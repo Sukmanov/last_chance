@@ -17,7 +17,7 @@
       </div>
 
       <div id="main-page-image">
-        <img id="main-image" src="../../../images/Group 30.png" alt="">
+        <img id="main-image" src="https://i.yapx.ru/XeOYc.png" alt="">
       </div>
 
     </div>
@@ -31,7 +31,7 @@
 #main-page {
   width: 100%;
   display: flex;
-  background-image: url("../../../images/film 1.png");
+  background-image: url("https://i.yapx.ru/XeOUz.png");
   background-size: contain;
 }
 

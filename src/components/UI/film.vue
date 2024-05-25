@@ -21,12 +21,6 @@
           required: true,
         }
 
-    },
-
-    data() {
-      return {
-        imagePath: require('../../../images/Постер.png')
-      }
     }
   }
 </script>
@@ -43,12 +37,12 @@
         <!--     Добавить id поста в query   -->
         <my-button-1 @click="$router.push('/FilmPage')" :textButton="'Смотреть'"></my-button-1>
         <div><span id="film-rating" v-text="filmRating"></span></div>
-        <div><img id="id-star" src="../../../images/Star 1.png" alt=""></div>
+        <div><img id="id-star" src="https://i.yapx.ru/XeOZr.png" alt=""></div>
       </div>
     </div>
 
     <div id="a2">
-      <div><img id="film-image" :src="imagePath" alt=""></div>
+      <div><img id="film-image" src="https://i.yapx.ru/XeOdE.png" alt=""></div>
       <div><p id="directors">film.Directors</p></div>
     </div>
 
