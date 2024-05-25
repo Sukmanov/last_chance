@@ -1,39 +1,52 @@
 <script>
 
+import MyButton2 from "@/components/UI/MyButton2.vue";
+
 export default {
   name: 'top-header',
+  components: {MyButton2},
 
   methods: {
     Search() {
       console.log('Search func');
     },
-    Login() {
-      console.log('Login func');
+
+
+  },
+
+  data() {
+    return{
+      authFlag: localStorage.getItem('isAuth'),
     }
   }
+
+
+
 }
 
 </script>
 
 <template>
-  <div id="block">
+  <div id="block1">
     <div class="top-header-elems">
-      <img src="../../../images/logo.png" alt="" id="image">
+      <button id="film-page-navi" @click="$router.push('/MovieCatalog')">
+        <img src="../../../images/logo.png" alt="" id="image">
+      </button>
 
     </div>
     <div class="top-header-elems">
       <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
     </div>
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Войти'" @click="$router.push('/login')"></my-button-2>
-
+      <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === 'true'"></my-button-2>
+      <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>/
     </div>
   </div>
 </template>
 
 <style>
 
-#block {
+#block1 {
   display: flex;
   justify-content: space-between;
 
@@ -43,9 +56,7 @@ export default {
   align-items: center;
 
   width: 70%;
-  height: 80px;
-
-  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
 #image {
@@ -55,6 +66,11 @@ export default {
 
 .top-header-elems {
   width: 80px;
+}
+
+#film-page-navi {
+  background-color: transparent;
+  border: none;
 }
 
 </style>

@@ -1,10 +1,24 @@
 <script>
+  export default {
 
+    methods: {
+      login() {
+        localStorage.setItem('isAuth', 'true')
+      }
+    },
+
+    data() {
+      return {
+        loginInput: '',
+        passwordInput: '',
+      }
+    }
+  }
 </script>
 
 <template>
-  <div class="button-back">
-    <my-button-2 :textButton="'Вернуться'" @click="$router.push('/')"></my-button-2>
+  <div class="div-back">
+    <my-button-2 id="button-back" :textButton="'Главная страница'" @click="$router.push('/')"></my-button-2>
   </div>
   <div class="login-container">
     <span id="text-login">Войдите в свой аккаунт</span>
@@ -53,6 +67,10 @@
   margin: 15px auto 0 auto;
 
   width: 500px;
+}
+
+#button-back {
+  width: 20%;
 }
 
 
