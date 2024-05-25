@@ -8,7 +8,6 @@
     <my-input-1 nameInput="Логин" id="login-button"></my-input-1>
     <my-input-1 nameInput="Пароль" id="password-button"></my-input-1>
     <my-input-1 nameInput="Повторите пароль" id="password-button"></my-input-1>
-    <my-button-2 textButton="Забыли пароль ?" id="forget-pass-button"></my-button-2>
     <my-button-1 textButton="Регистрация" id="login-button"></my-button-1>
   </div>
 </template>
@@ -40,12 +39,5 @@
   margin: 15px auto 0 auto;
 
 }
-
-#forget-pass-button {
-  margin: 15px auto 0 auto;
-
-  width: 500px;
-}
-
 
 </style>
