@@ -8,6 +8,7 @@ import FilmPage from "@/components/pages/FilmPage.vue"
 import AchievementMain from "@/components/pages/AchievementMain.vue"
 import DailyAchievementsCatalog from "@/components/pages/DailyAchievementsCatalog.vue"
 import ConstAchievementsCatalog from "@/components/pages/ConstAchievementsCatalog.vue"
+import ChangePassword from "@/components/pages/ChangePassword.vue";
 
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
         path: '/registration',
         name: 'Registration',
         component: Registration,
+    },
+    {
+        path: '/change-password',
+        name: 'ChangePassword',
+        component: ChangePassword,
     },
     {
         path: '/MovieCatalog',
