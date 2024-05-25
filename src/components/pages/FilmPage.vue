@@ -7,7 +7,7 @@
           name: 'ДЖафыва',
           description: 'sdfhhusd dhsf usduf asudf dush fhs',
           rating: 6,
-          imgPath: '../../../images/poster.png',
+          imgPath: 'https://i.yapx.ru/XeOdE.png',
           director: 'adsf hasdf ',
           actors: 'asdf sdfuh ashf'
         }
