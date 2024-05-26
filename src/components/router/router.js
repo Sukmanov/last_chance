@@ -9,6 +9,8 @@ import AchievementMain from "@/components/pages/AchievementMain.vue"
 import DailyAchievementsCatalog from "@/components/pages/DailyAchievementsCatalog.vue"
 import ConstAchievementsCatalog from "@/components/pages/ConstAchievementsCatalog.vue"
 import ChangePassword from "@/components/pages/ChangePassword.vue";
+import PersonalProfile from "@/components/pages/PersonalProfile.vue";
+import Profile from "@/components/pages/Profile.vue"
 
 
 const routes = [
@@ -55,6 +57,16 @@ const routes = [
         path: '/ConstAchievementCatalog',
         name: 'ConstAchievementCatalog',
         component: ConstAchievementsCatalog,
+    },
+    {
+        path: '/PersonalProfile',
+        name: 'PersonalProfile',
+        component: PersonalProfile,
+    },
+    {
+        path: '/Profile',
+        name: 'Profile',
+        component: Profile,
     }
 ]
 

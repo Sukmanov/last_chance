@@ -1,7 +1,6 @@
 const URL = "http://localhost:8060";
 
 export const sendLoginRequest = async (login, password) => {
-    const response = await
 }
 
 const sendApiRequest = async (path, method = "GET", body = "") => {
