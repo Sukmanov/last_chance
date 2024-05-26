@@ -2,25 +2,16 @@
 
   export default {
     name: "film",
-
     props: {
-        filmName: {
-          type: String,
-          required: true,
-        },
-        filmDescription: {
-          type: String,
-          required: true,
-        },
-        filmRating: {
-          type: Number,
-          required: true,
-        },
-        filmImgPath: {
-          type: String,
-          required: true,
-        }
-
+      film: {
+        type: Object,
+        required: true
+      }
+    },
+    methods: {
+      goToFilmPage(film) {
+        this.$router.push({ path: `/FilmPage/${film.id}`, params: { id: film.id } });
+      }
     }
   }
 </script>
@@ -30,20 +21,22 @@
   <div class="film">
 
     <div id="a1">
-      <div><span id="film-name" v-text="filmName"></span></div>
-      <div><p id="film-describe" v-text="filmDescription"></p></div>
+      <div><span id="film-name" v-text="film.name"></span></div>
+      <div><p id="film-description" v-text="film.description"></p></div>
+      <div><p id="directors">film.Directors</p></div>
 
       <div id="button-rating">
         <!--     Добавить id поста в query   -->
-        <my-button-1 @click="$router.push('/FilmPage')" :textButton="'Смотреть'"></my-button-1>
-        <div><span id="film-rating" v-text="filmRating"></span></div>
+        <my-button-1 @click="goToFilmPage(film)" :textButton="'Смотреть'"></my-button-1>
+        <div><span id="film-rating" v-text="rate"></span></div>
         <div><img id="id-star" src="https://i.yapx.ru/XeOZr.png" alt=""></div>
       </div>
     </div>
 
     <div id="a2">
-      <div><img id="film-image" src="https://i.yapx.ru/XeOdE.png" alt=""></div>
-      <div><p id="directors">film.Directors</p></div>
+      <div id="film-image-container" class="darkened-edges">
+        <img id="film-image" :src="`http://localhost:5123/api/file/${film.posterId}`" alt="">
+      </div>
     </div>
 
 
@@ -82,16 +75,22 @@
 
 #film-name {
   color: white;
-  font-size: 55px;
-  font-weight: 300;
+  font-size: 10vh;
+  font-weight: 100;
   font-family: "Rubik", sans-serif;
 }
 
-#film-describe {
+#film-description {
+  margin-top: 10%;
+  margin-bottom: 10%;
   color: white;
   font-size: 15px;
   font-weight: 300;
   font-family: "Rubik", sans-serif;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 #button-rating {
@@ -107,9 +106,11 @@
 }
 
 #film-image {
-  width: 100%;
-  height: 90%;
+  margin-left: 20vh;
+  width: 60%;
+  height: 60%;
   margin-bottom: 10px;
+  border-radius: 20px;
 }
 
 #directors {

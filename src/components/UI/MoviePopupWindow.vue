@@ -18,8 +18,8 @@ export default {
             this.$emit('update-movie', movie);
           });
     },
-    goToFilmPage() {
-      this.$router.push('/FilmPage');
+    goToFilmPage(film) {
+      this.$router.push({ path: `/FilmPage/${film.id}`, params: { id: film.id }});
     }
   }
 };
@@ -28,10 +28,10 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <div id="text">Movie: {{ movie?.name }}</div>
+      <div id="text">Фильм: {{ movie?.name }}</div>
       <div id="buttons">
         <my-button1 @click="otherMovie" text-button="Другой фильм"></my-button1>
-        <my-button1 @click="goToFilmPage" text-button="Перейти к фильму"></my-button1>
+        <my-button1 @click="goToFilmPage(movie)" text-button="Перейти к фильму"></my-button1>
       </div>
     </div>
   </div>

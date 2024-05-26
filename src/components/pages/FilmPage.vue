@@ -1,8 +1,11 @@
 <script>
 
+  import {getMovieById} from "@/api/api";
+
   export default {
     data() {
       return{
+        film: null,
         films: {
           name: 'ДЖафыва',
           description: 'sdfhhusd dhsf usduf asudf dush fhs',
@@ -15,11 +18,14 @@
 
 
     },
-
-    props: {
-      film: {
-        type: Object,
-        required: true,
+    created() {
+      const filmId = this.$route.params.id;
+      this.getFilm(filmId);
+    },
+    methods: {
+      async getFilm(filmId) {
+        await getMovieById(filmId)
+            .then(movie => this.film = movie);
       }
     }
   }
@@ -27,10 +33,10 @@
 
 <template>
   <top-header></top-header>
-    <film-info :FilmDescription="films.description"
-               :FilmActros="films.actors"
-               :FilmDirector="films.director"
-               :FilmName="films.name"></film-info>/
+    <film-info :FilmDescription="film?.description"
+               :FilmActros="film?.actors"
+               :FilmDirector="film?.director"
+               :FilmName="film?.name"></film-info>/
   <rating-menu id="menu-rating"></rating-menu>
   <comments-list></comments-list>
   <bottom-contacts></bottom-contacts>
