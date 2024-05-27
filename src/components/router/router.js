@@ -67,7 +67,8 @@ const routes = [
         path: '/Profile',
         name: 'Profile',
         component: Profile,
-    }
+    },
+
 ]
 
 const router = createRouter({

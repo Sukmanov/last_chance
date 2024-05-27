@@ -28,7 +28,7 @@
 
 <template>
   <top-header></top-header>
-  <arr-films :films2="films"></arr-films>
+  <test-arr-films :films2="films"></test-arr-films>
   <div id="bottom"><bottom-contacts ></bottom-contacts></div>
 </template>
 
