@@ -33,6 +33,7 @@
                :FilmName="films.name"></film-info>/
   <rating-menu id="menu-rating"></rating-menu>
   <comments-list></comments-list>
+  <new-comment id="new-comment-block"></new-comment>
   <bottom-contacts></bottom-contacts>
 
 </template>

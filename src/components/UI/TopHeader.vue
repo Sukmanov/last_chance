@@ -16,7 +16,7 @@ export default {
 
   data() {
     return{
-      authFlag: localStorage.getItem('isAuth'),
+      authFlag: false,
     }
   }
 
@@ -29,7 +29,7 @@ export default {
 <template>
   <div id="block1">
     <div class="top-header-elems">
-      <button id="film-page-navi" @click="$router.push('/MovieCatalog')">
+      <button id="film-page-navi" @click="$router.push('/')">
         <img src="../../../images/logo.png" alt="" id="image">
       </button>
 
@@ -38,7 +38,7 @@ export default {
       <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
     </div>
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === 'true'"></my-button-2>
+      <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === true"></my-button-2>
       <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>/
     </div>
   </div>
