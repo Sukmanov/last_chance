@@ -43,8 +43,8 @@ export default {
 }
 
 #film-name{
-  font-size: 70px;
-  font-weight: 500;
+  font-size: 8vh;
+  font-weight: 100;
   font-family: "Rubik", sans-serif;
   color: white;
 }

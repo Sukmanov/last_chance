@@ -7,6 +7,7 @@ export default {
 </script>
 
 <template>
+  <div class="line"></div>
   <div id="block">
     <div id="navi">
       <my-button-2 :textButton="'О нас'" class="block-button"></my-button-2>
@@ -24,19 +25,33 @@ export default {
 </template>
 
 <style>
+.line {
+  margin-top: 10%;
+  height: 2px;
+  width: 100%;
+  background-color: #FFB800;
+  box-shadow: 0 0 10px 2px #FFB800;
+}
 
 #navi {
-  width: 70%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 15%;
 }
 
 .block-button {
-  display: flex;
-  width: 100%;
+  width: 150px;
+  text-align: left;
 }
 
 #contacts {
   display: flex;
+  gap: 10px;
   flex-direction: column;
+  margin-right: 15%;
 }
 
 #image-telegram {
@@ -61,7 +76,13 @@ export default {
 }
 
 #block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
   height: 200px;
+  width: 100%;
+  margin-top: 5%;
 }
 
 </style>

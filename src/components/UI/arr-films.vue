@@ -23,10 +23,7 @@
 <template>
   <div class="arr-films" v-for="film in films2">
     <film
-      :filmName="film.name"
-      :filmDescription="film.description"
-      :filmRating="film.rating"
-      :film-img-path="film.img"
+      :film="film"
     >
     </film>
   </div>

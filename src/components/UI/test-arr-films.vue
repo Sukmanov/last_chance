@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       numPage: 1,
-      limit: 2,
+      limit: 4,
     }
   },
 
@@ -51,10 +51,7 @@ export default {
   <div>
     <div class="arr-films" v-for="film in paginatedFilms" :key="film.id">
       <film
-          :filmName="film.name"
-          :filmDescription="film.description"
-          :filmRating="film.rating"
-          :film-img-path="film.img"
+          :film="film"
       >
       </film>
     </div>
