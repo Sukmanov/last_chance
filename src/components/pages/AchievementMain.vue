@@ -21,6 +21,7 @@
       </div>
 
       <achievement-list id="achievement-grid"></achievement-list>
+      <my-button-1 @click="$router.push('/DailyAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
       <my-button-1 @click="$router.push('/ConstAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
     </div>
   </div>
@@ -52,8 +53,7 @@
 }
 
 #achievement-grid{
-  margin: 50px auto 0 auto;
-  justify-items: center;
+  margin-top: 50px;
 }
 
 #daily-achievements {
