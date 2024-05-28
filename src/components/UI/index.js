@@ -13,6 +13,7 @@ import Achievement from "@/components/UI/achievement.vue";
 import AchievementList from "@/components/UI/AchievementList.vue";
 import Test from "@/components/UI/test-arr-films.vue"
 import NewComment from "@/components/UI/newComment.vue"
+import Test2 from "@/components/UI/test-commentList.vue"
 
 export default [
     MyButton1,
@@ -30,4 +31,5 @@ export default [
     AchievementList,
     Test,
     NewComment,
+    Test2,
 ]

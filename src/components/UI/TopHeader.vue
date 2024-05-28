@@ -34,9 +34,12 @@ export default {
       </button>
 
     </div>
+
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
+<!--      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>-->
+      <my-input-1 :nameInput="'Поиск'"></my-input-1>
     </div>
+
     <div class="top-header-elems">
       <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === true"></my-button-2>
       <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>/
@@ -65,7 +68,6 @@ export default {
 }
 
 .top-header-elems {
-  width: 80px;
 }
 
 #film-page-navi {
