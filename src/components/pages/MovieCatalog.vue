@@ -65,7 +65,7 @@
       <MoviePopupWindow :movie="randomMovie" @update-movie="updateMovie"></MoviePopupWindow>
     </div>
   </transition>
-  <arr-films :films2="filteredFilms"></arr-films>
+  <test-arr-films :films2="filteredFilms"></test-arr-films>
   <div id="bottom"><bottom-contacts ></bottom-contacts></div>
 </template>
 

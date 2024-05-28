@@ -10,7 +10,13 @@
       }
     },
 
-
+    data() {
+      return {
+        numPage: 1,
+        limit: 5,
+        totalPages: 0,
+      }
+    }
   }
 </script>
 
