@@ -33,7 +33,7 @@ export default {
   <div id="block1">
     <div class="top-header-elems">
       <button id="film-page-navi" @click="$router.push('/')">
-        <img src="../../../images/logo.png" alt="" id="image">
+        <img src="https://i.yapx.ru/XeOOO.png" alt="" id="image">
       </button>
 
     </div>
