@@ -48,7 +48,7 @@
   border: 1px solid white;
   border-radius: 20px;
   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
-  padding: 20px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
 }
 
 </style>

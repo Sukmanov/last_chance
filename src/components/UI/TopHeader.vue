@@ -32,14 +32,17 @@ export default {
 <template>
   <div id="block1">
     <div class="top-header-elems">
-      <button id="film-page-navi" @click="$router.push('/MovieCatalog')">
+      <button id="film-page-navi" @click="$router.push('/')">
         <img src="../../../images/logo.png" alt="" id="image">
       </button>
 
     </div>
+
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
+<!--      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>-->
+      <my-input-1 :nameInput="'Поиск'"></my-input-1>
     </div>
+
     <div class="top-header-elems">
       <my-button2 :textButton="'Выйти'" @click="LogOut" v-if="$route.path === '/PersonalProfile'"></my-button2>
       <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-else-if="authFlag === 'true'"></my-button-2>

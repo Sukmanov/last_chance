@@ -24,20 +24,27 @@ export default {
 </script>
 
 <template>
-  <div id="film-page-info">
-    <span id="film-name">{{FilmName}}</span>
-    <span id="director">{{FilmDirector}}</span>
-    <span id="actors">{{FilmActros}}</span>
-    <p id="description">{{FilmDescription}}</p>
-<!--    <my-button-1 :textButton="'Смотреть'"></my-button-1>-->
+  <div id="film-page-container">
+    <div id="film-page-info">
+      <span id="film-name">{{FilmName}}</span>
+      <span id="director">{{FilmDirector}}</span>
+      <span id="actors">{{FilmActros}}</span>
+      <p id="description">{{FilmDescription}}</p>
+      <!--    <my-button-1 :textButton="'Смотреть'"></my-button-1>-->
+    </div>
+
+    <div id="film-image">
+      <img src="https://i.yapx.ru/XeOYc.png" alt="">
+    </div>
   </div>
+
 </template>
 
 <style>
 
 #film-page-info{
   margin: 0 auto;
-  width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -68,6 +75,17 @@ export default {
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
+}
+
+#film-page-container{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#film-image {
+  width: 50%;
 }
 
 
