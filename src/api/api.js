@@ -1,3 +1,5 @@
+import {ElMessage} from "element-plus";
+
 const URL = "http://localhost:5123";
 const axios = require('axios');
 
@@ -29,8 +31,23 @@ export async function getMovies() {
     }
 }
 
-export const sendLoginRequest = async (login, password) => {
-    //const response = await
+export async function sendLoginRequest (login, password) {
+    try {
+        const response = await fetch(URL + "/api/auth/login", {
+            method: 'POST',
+            headers: {
+                'Accept': 'text/plain',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                login: login,
+                password: password
+            })
+        });
+        return response;
+    } catch (error) {
+        console.error('Ошибка при отправке запроса:', error);
+    }
 }
 
 const sendApiRequest = async (path, method = "GET", body = "") => {

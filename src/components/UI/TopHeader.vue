@@ -10,7 +10,10 @@ export default {
     Search() {
       console.log('Search func');
     },
-
+    LogOut() {
+      localStorage.clear();
+      this.$router.push('/');
+    }
 
   },
 
@@ -38,8 +41,9 @@ export default {
       <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>
     </div>
     <div class="top-header-elems">
-      <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === 'true'"></my-button-2>
-      <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>/
+      <my-button2 :textButton="'Выйти'" @click="LogOut" v-if="$route.path === '/PersonalProfile'"></my-button2>
+      <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-else-if="authFlag === 'true'"></my-button-2>
+      <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>
     </div>
   </div>
 </template>
