@@ -37,7 +37,14 @@ export default {
 
     <div class="top-header-elems">
 <!--      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>-->
-      <my-input-1 :nameInput="'Поиск'"></my-input-1>
+<!--      <my-input-1 :nameInput="'Поиск'"></my-input-1>-->
+      <input
+          v-bind:value="title"
+          @input="inputTitle"
+          :placeholder="'Поиск'"
+          type="text"
+          id="top-header__input"
+      >
     </div>
 
     <div class="top-header-elems">
@@ -66,8 +73,15 @@ export default {
   width: 80px;
   height: 80px;
 }
+#top-header__input {
+  width: 200px;
+  height: 20px;
+  font-size: 15px;
+  font-weight: 300;
 
-.top-header-elems {
+  /*вопросы, не меняется цвет текста в placeholder*/
+  color: grey;
+  background-color: #1e1e1e;
 }
 
 #film-page-navi {
