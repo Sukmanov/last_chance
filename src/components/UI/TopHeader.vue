@@ -74,14 +74,16 @@ export default {
   height: 80px;
 }
 #top-header__input {
-  width: 200px;
-  height: 20px;
+  width: 300px;
+  height: 35px;
   font-size: 15px;
   font-weight: 300;
 
-  /*вопросы, не меняется цвет текста в placeholder*/
   color: grey;
   background-color: #1e1e1e;
+  border-radius: 15px;
+  border: none;
+  padding: 0 5px 0 5px;
 }
 
 #film-page-navi {

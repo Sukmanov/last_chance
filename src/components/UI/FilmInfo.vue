@@ -34,7 +34,7 @@ export default {
     </div>
 
     <div id="film-image">
-      <img src="https://i.yapx.ru/XeOYc.png" alt="">
+      <img id="filmInfo__image" src="https://i.yapx.cc/XeOdE.png" alt="">
     </div>
   </div>
 
@@ -86,6 +86,11 @@ export default {
 
 #film-image {
   width: 50%;
+}
+
+#filmInfo__image {
+  width: 100%;
+  height: 100%
 }
 
 

@@ -42,7 +42,7 @@
     </div>
 
     <div id="a2">
-      <div><img id="film-image" src="https://i.yapx.ru/XeOdE.png" alt=""></div>
+      <div><img id="film-image" src="https://i.yapx.cc/XeOdE.png" alt=""></div>
       <div><p id="directors">film.Directors</p></div>
     </div>
 
