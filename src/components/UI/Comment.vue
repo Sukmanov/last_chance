@@ -17,7 +17,6 @@
 </script>
 
 <template>
-  HELLO
   <div class="comment">
     <span id="nickname">{{ Nickname }}</span>
     <p id="comment-text">{{Comment}}</p>
@@ -44,7 +43,7 @@
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin: 0 auto;
+  margin: 10px auto;
   border: 1px solid white;
   border-radius: 20px;
   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
