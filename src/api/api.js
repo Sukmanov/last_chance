@@ -1,7 +1,85 @@
-import {ElMessage} from "element-plus";
-
 const URL = "http://localhost:5123";
 const axios = require('axios');
+
+export async function getChallenge(challengeId) {
+    try {
+        const response = await axios.get(URL + `/api/challenge/${challengeId}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function putUser(requestBody) {
+    try {
+        await fetch(URL + `/api/user/${requestBody.id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function putFile(fileId, fileName, formData) {
+    try {
+        await fetch(URL + `/api/file/${fileId}?fileName=${fileName}`, {
+            method: 'PUT',
+            headers: {
+                'Accept': '*/*',
+            },
+            body: formData,
+        });
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+export async function getUserById(userId) {
+    try {
+        const response = await axios.get(URL + `/api/user/${userId}`);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getMoviesByName(name) {
+    try {
+        const response = await axios.get(URL + `/api/movie/${name}`);
+        console.log(response.status);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function putMovieFeedback(requestBody) {
+    try {
+        const response = await fetch(URL + `/api/movie-feedback/${requestBody.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody)
+        });
+        console.log(response);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getUsernameById(userId) {
+    try {
+        const user = await axios.get(URL + "/api/user/" + userId);
+        return user.data.name;
+    } catch (e) {
+        console.log(e);
+    }
+}
 
 export async function getRandomMovie() {
     try {
