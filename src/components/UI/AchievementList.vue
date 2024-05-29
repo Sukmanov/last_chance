@@ -68,16 +68,23 @@ export default {
       </div>
     </div>
     <div class="pagination">
-      <button @click="prevPage" :disabled="numPage === 1">Previous</button>
+      <button @click="prevPage"
+              :disabled="numPage === 1"
+              id="page-btn"
+      >Previous</button>
       <button
           v-for="page in totalPages"
           :key="page"
           @click="goToPage(page)"
           :class="{ active: numPage === page }"
+          id="page-btn"
       >
         {{ page }}
       </button>
-      <button @click="nextPage" :disabled="numPage === totalPages">Next</button>
+      <button @click="nextPage"
+              :disabled="numPage === totalPages"
+              id="page-btn"
+      >Next</button>
     </div>
   </div>
 </template>
@@ -113,5 +120,18 @@ export default {
   font-weight: bold;
   background-color: #007bff;
   color: #fff;
+}
+
+#page-btn {
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: grey;
+  background: transparent;
+}
+
+#page-btn:hover {
+  text-decoration: underline;
 }
 </style>
