@@ -1,6 +1,7 @@
 <script>
 
 import MyButton2 from "@/components/UI/MyButton2.vue";
+import {getMoviesByName} from "@/api/api";
 
 export default {
   name: 'top-header',
@@ -8,7 +9,13 @@ export default {
 
   methods: {
     Search() {
-      console.log('Search func');
+      console.log(this.searchParam);
+      if (this.$router.path !== '/MovieCatalog') {
+        this.$router.push({ path: `/MovieCatalog`, params: { name: this.searchParams } });
+      } else {
+
+      }
+
     },
     LogOut() {
       localStorage.clear();
@@ -19,6 +26,8 @@ export default {
 
   data() {
     return{
+      movies: [],
+      searchParam: '',
       authFlag: localStorage.getItem('isAuth'),
     }
   }
@@ -39,8 +48,10 @@ export default {
     </div>
 
     <div class="top-header-elems">
-<!--      <my-button-2 :textButton="'Поиск'" @click="Search"></my-button-2>-->
-      <my-input-1 :nameInput="'Поиск'"></my-input-1>
+      <div class="search-container">
+        <my-input-1 v-model="searchParam" id="search-input" :nameInput="'Поиск'"></my-input-1>
+        <my-button-2 id="search-button" :textButton="'Поиск'" @click="Search"></my-button-2>
+      </div>
     </div>
 
     <div class="top-header-elems">
@@ -71,13 +82,20 @@ export default {
   height: 80px;
 }
 
-.top-header-elems {
-  width: 80px;
-}
-
 #film-page-navi {
   background-color: transparent;
   border: none;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+#search-input {
+  margin-top: 7px;
+  margin-right: 10px;
 }
 
 </style>

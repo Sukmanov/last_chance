@@ -15,15 +15,11 @@
           localStorage.setItem("isAuth", true);
           this.$router.push("/");
         } else {
-          // ElMessage({
-          //   message: 'Логин или пароль введены неверно.',
-          //   type: 'error',
-          //   showClose: true,
-          // })
-          this.$message({
-            message: "Логин или пароль введены неверно",
-            type: "error",
-          });
+          ElMessage({
+            message: 'Логин или пароль введены неверно.',
+            type: 'error',
+            showClose: true,
+          })
         }
       }
     },
