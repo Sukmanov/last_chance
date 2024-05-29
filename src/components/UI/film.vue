@@ -81,13 +81,11 @@ export default {
 }
 
 #a1 {
-  border: 1px solid yellow;
   flex-grow: 1;
   width: 50%;
 }
 
 #a2 {
-  border: 1px solid yellow;
   flex-grow: 1;
   width: 50%;
   display: flex;
@@ -96,7 +94,6 @@ export default {
 }
 
 .film {
-  border: 1px red solid;
   height: auto;
   width: 100%;
   display: flex;
