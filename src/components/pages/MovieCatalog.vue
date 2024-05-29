@@ -46,12 +46,20 @@
         });
       },
     },
-    created() {
-      getMovies()
+    async created() {
+      await getMovies()
           .then(movies => {
             this.films = movies;
             this.filteredFilms = this.films;
           })
+    },
+    props: {
+      movies: []
+    },
+    computed: {
+      getByName() {
+        this.filteredFilms = this.$props.movies;
+      }
     }
   };
 </script>
