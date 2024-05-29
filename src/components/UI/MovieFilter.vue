@@ -4,6 +4,7 @@ import { ElSelect, ElOption, ElButton } from 'element-plus';
 import 'element-plus/dist/index.css';
 import MyButton1 from "@/components/UI/MyButton1.vue";
 import {getMovies} from "@/api/api";
+import {createDictionaryForFilter} from "@/api/helpers";
 
 export default defineComponent({
   components: {
@@ -47,7 +48,7 @@ export default defineComponent({
       getMovies().then(allMovies => this.movies = allMovies);
       this.filteredMovies = this.movies.filter(movie => {
         const genreMatch = this.selectedGenres.length === 0 || movie.genres.some(g => this.selectedGenres.includes(g));
-        const yearMatch = !this.selectedYear || movie.year === this.selectedYear;
+        const yearMatch = !this.selectedYear || movie.releaseDate.toString().substring(0, 4) === this.selectedYear.toString();
         const countryMatch = !this.selectedCountry || movie.countries === this.selectedCountry;
         const ratingMatch = !this.selectedRating || movie.rating === this.selectedRating;
 

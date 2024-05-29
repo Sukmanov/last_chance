@@ -1,7 +1,7 @@
 <script>
   import axios from 'axios';
   import MyButton1 from "@/components/UI/MyButton1.vue";
-  import {getMovies, getRandomMovie} from "@/api/api";
+  import {getMovies, getMoviesByName, getRandomMovie} from "@/api/api";
   import MoviePopupWindow from "@/components/UI/MoviePopupWindow.vue";
   import MovieFilter from "@/components/UI/MovieFilter.vue";
 
