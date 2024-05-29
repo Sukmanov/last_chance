@@ -44,15 +44,15 @@ export default defineComponent({
         country: this.selectedCountry,
         rating: this.selectedRating
       })
-      // getMovies().then(allMovies => this.movies = allMovies);
-      // this.filteredMovies = this.movies.filter(movie => {
-      //   const genreMatch = this.selectedGenre.length === 0 || movie.genres.some(g => this.selectedGenre.includes(g));
-      //   const yearMatch = !this.selectedYear || movie.year === this.selectedYear;
-      //   const countryMatch = !this.selectedCountry || movie.countries === this.selectedCountry;
-      //   const ratingMatch = !this.selectedRating || movie.rating === this.selectedRating;
-      //
-      //   return genreMatch && yearMatch && countryMatch && ratingMatch;
-      // });
+      getMovies().then(allMovies => this.movies = allMovies);
+      this.filteredMovies = this.movies.filter(movie => {
+        const genreMatch = this.selectedGenres.length === 0 || movie.genres.some(g => this.selectedGenres.includes(g));
+        const yearMatch = !this.selectedYear || movie.year === this.selectedYear;
+        const countryMatch = !this.selectedCountry || movie.countries === this.selectedCountry;
+        const ratingMatch = !this.selectedRating || movie.rating === this.selectedRating;
+
+        return genreMatch && yearMatch && countryMatch && ratingMatch;
+      });
     },
     onSearchClick() {
       this.searchMovies();

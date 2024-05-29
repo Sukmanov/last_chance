@@ -1,10 +1,11 @@
 <script>
 
-  import {getMovieById} from "@/api/api";
+import {getMovieById, getUsernameById} from "@/api/api";
 
   export default {
     data() {
       return{
+        isAuth: localStorage.getItem('isAuth'),
         film: null,
         films: {
           name: 'ДЖафыва',
@@ -24,38 +25,46 @@
           {id: 1, username: 'ivan petrov', comment: "i like it"},
           {id: 2, username: 'ivan petrov', comment: "i dont like it"},
           {id: 3, username: 'ivan petrov', comment: "i am going to watch"},
-        ]
-
+        ],
+        comments: []
       }
 
 
     },
-    created() {
+    async created() {
       const filmId = this.$route.params.id;
-      this.getFilm(filmId);
+      await this.getFilm(filmId);
+      await this.getFeedbacks();
+
+
     },
     methods: {
       async getFilm(filmId) {
         await getMovieById(filmId)
             .then(movie => this.film = movie);
+      },
+      async getFeedbacks() {
+        this.comments = this.film?.movieFeedbacks;
+
+        for (let feedback of this.comments) {
+          await getUsernameById(feedback.userId)
+              .then(username => feedback.username = username);
+        }
       }
     }
   }
+
 </script>
 
 <template>
   <top-header></top-header>
   <div id="main-page-container-info">
-    <film-info :FilmDescription="films.description"
-               :FilmActros="films.actors"
-               :FilmDirector="films.director"
-               :FilmName="films.name"
-    ></film-info>
+    <film-info :film=film></film-info>
   </div>
 
   <rating-menu id="menu-rating"></rating-menu>
-  <test-comments-list :comments="comments2"></test-comments-list>
-  <new-comment id="new-comment-block"></new-comment>
+  <test-comments-list :comments="comments"></test-comments-list>
+  <new-comment :movie-id=film?.id id="new-comment-block" v-if="isAuth === 'true'"></new-comment>
   <bottom-contacts></bottom-contacts>
 
 </template>

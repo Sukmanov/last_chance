@@ -1,40 +1,33 @@
 <script>
 export default {
   name: "film-info",
+  data() {
+    return {
+      posterLink: ''
+    }
+  },
 
   props: {
-    FilmName: {
-      type: String,
-      required: true,
-    },
-    FilmDirector: {
-      type: String,
-      required: true,
-    },
-    FilmActros: {
-      type: String,
-      required: true,
-    },
-    FilmDescription: {
-      type: String,
-      required: true,
+    film: {
+      type: Object,
+      required: true
     }
   }
 }
 </script>
 
 <template>
-  <div id="film-page-container">
-    <div id="film-page-info">
-      <span id="film-name">{{FilmName}}</span>
-      <span id="director">{{FilmDirector}}</span>
-      <span id="actors">{{FilmActros}}</span>
-      <p id="description">{{FilmDescription}}</p>
+  <div id="--film-info__film-page-container">
+    <div id="--film-info__film-page-info">
+      <span id="--film-info__film-name">{{film?.name}}</span>
+      <span id="--film-info__director">{{film?.director}}</span>
+      <span id="--film-info__actors">{{}}</span>
+      <p id="--film-info__description">{{film?.description}}</p>
       <!--    <my-button-1 :textButton="'Смотреть'"></my-button-1>-->
     </div>
 
-    <div id="film-image">
-      <img src="https://i.yapx.ru/XeOYc.png" alt="">
+    <div id="--film-info__film-image-container">
+      <img id="--film-info__film-image" :src="`http://localhost:5123/api/file/${film?.posterId}`" alt="">
     </div>
   </div>
 
@@ -42,50 +35,55 @@ export default {
 
 <style>
 
-#film-page-info{
+#--film-info__film-page-info{
   margin: 0 auto;
   width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-#film-name{
+#--film-info__film-name{
   font-size: 8vh;
   font-weight: 100;
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-#director {
+#--film-info__director {
   font-size: 20px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-#actors {
+#--film-info__actors {
   font-size: 20px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-#description {
+#--film-info__description {
   font-size: 20px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-#film-page-container{
+#--film-info__film-page-container{
   width: 70%;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
-#film-image {
-  width: 50%;
+#--film-info__film-image {
+  margin-left: 20vh;
+  width: 60%;
+  height: 60%;
+  margin-bottom: 10px;
+  border-radius: 20px;
 }
 
 

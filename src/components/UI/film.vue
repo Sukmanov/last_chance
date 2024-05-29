@@ -75,7 +75,7 @@
 
 #film-name {
   color: white;
-  font-size: 10vh;
+  font-size: 8vh;
   font-weight: 100;
   font-family: "Rubik", sans-serif;
 }
