@@ -4,12 +4,11 @@
     data() {
       return{
         films: {
-          name: 'ДЖафыва',
-          description: 'sdfhhusd dhsf usduf asudf dush fhs',
+          name: 'Название фильма',
+          description: 'Тут какое-то описание фильма',
           rating: 6,
           imgPath: 'https://i.yapx.ru/XeOdE.png',
-          director: 'adsf hasdf ',
-          actors: 'asdf sdfuh ashf'
+
         },
         comments2: [
           {id: 1, username: 'ivan petrov', comment: "i like it"},
@@ -21,7 +20,9 @@
           {id: 1, username: 'ivan petrov', comment: "i like it"},
           {id: 2, username: 'ivan petrov', comment: "i dont like it"},
           {id: 3, username: 'ivan petrov', comment: "i am going to watch"},
-        ]
+        ],
+        directors: ['vanya', 'petya'],
+        actors: ['gosha', 'bodya'],
 
       }
 
@@ -41,10 +42,10 @@
   <top-header></top-header>
   <div id="main-page-container-info">
     <film-info :FilmDescription="films.description"
-               :FilmActros="films.actors"
-               :FilmDirector="films.director"
+               :FilmActors="actors"
+               :FilmDirectors="directors"
                :FilmName="films.name"
-    ></film-info>/
+     ></film-info>/
   </div>
 
   <rating-menu id="menu-rating"></rating-menu>

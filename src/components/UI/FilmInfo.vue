@@ -7,12 +7,12 @@ export default {
       type: String,
       required: true,
     },
-    FilmDirector: {
-      type: String,
+    FilmDirectors: {
+      type: Array,
       required: true,
     },
-    FilmActros: {
-      type: String,
+    FilmActors: {
+      type: Array,
       required: true,
     },
     FilmDescription: {
@@ -26,10 +26,23 @@ export default {
 <template>
   <div id="film-page-container">
     <div id="film-page-info">
-      <span id="film-name">{{FilmName}}</span>
-      <span id="director">{{FilmDirector}}</span>
-      <span id="actors">{{FilmActros}}</span>
-      <p id="description">{{FilmDescription}}</p>
+      <span id="film-name">{{ FilmName }}</span>
+
+      <div id="directors">
+        <span class="label">Режисеры:</span>
+        <ul>
+          <li v-for="(director, index) in FilmDirectors" :key="index">{{ director }}</li>
+        </ul>
+      </div>
+
+      <div id="actors">
+        <span class="label">Актеры:</span>
+        <ul>
+          <li v-for="(actor, index) in FilmActors" :key="index">{{ actor }}</li>
+        </ul>
+      </div>
+
+      <p id="description">{{ FilmDescription }}</p>
       <!--    <my-button-1 :textButton="'Смотреть'"></my-button-1>-->
     </div>
 
@@ -37,37 +50,42 @@ export default {
       <img id="filmInfo__image" src="https://i.yapx.cc/XeOdE.png" alt="">
     </div>
   </div>
-
 </template>
 
 <style>
-
-#film-page-info{
+#film-page-info {
   margin: 0 auto;
   width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-#film-name{
+#film-name {
   font-size: 70px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-#director {
+#directors, #actors {
   font-size: 20px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
+  margin: 10px 0;
 }
 
-#actors {
-  font-size: 20px;
-  font-weight: 500;
-  font-family: "Rubik", sans-serif;
-  color: white;
+.label {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
 }
 
 #description {
@@ -75,9 +93,10 @@ export default {
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: white;
+  margin-top: 20px;
 }
 
-#film-page-container{
+#film-page-container {
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -90,8 +109,6 @@ export default {
 
 #filmInfo__image {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
-
-
 </style>

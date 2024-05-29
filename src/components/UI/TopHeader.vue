@@ -48,6 +48,10 @@ export default {
     </div>
 
     <div class="top-header-elems">
+      <my-button-2 :textButton="'Ачивки'" @click="$router.push('/AchievementMain')"></my-button-2>
+    </div>
+
+    <div class="top-header-elems">
       <my-button-2 :textButton="'Профиль'" @click="$router.push('/PersonalProfile')" v-if="authFlag === true"></my-button-2>
       <my-button2 :textButton="'Войти'" @click="$router.push('/login')" v-else></my-button2>/
     </div>

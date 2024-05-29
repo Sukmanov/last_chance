@@ -11,6 +11,7 @@ import ConstAchievementsCatalog from "@/components/pages/ConstAchievementsCatalo
 import ChangePassword from "@/components/pages/ChangePassword.vue";
 import PersonalProfile from "@/components/pages/PersonalProfile.vue";
 import Profile from "@/components/pages/Profile.vue"
+import Admin from "@/components/pages/admin.vue"
 
 
 const routes = [
@@ -67,6 +68,11 @@ const routes = [
         path: '/Profile',
         name: 'Profile',
         component: Profile,
+    },
+    {
+        path: '/admin',
+        name: 'admin',
+        component: Admin,
     },
 
 ]
