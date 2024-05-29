@@ -1,6 +1,16 @@
 <script>
+import {putMovieFeedback} from "@/api/api";
+import {generateGUID, generateNowISODateTime} from "@/api/helpers";
+
 export default {
   name: "new-comment",
+
+  props: {
+    movieId: {
+      type: String,
+      required: true
+    }
+  },
 
   data() {
     return {
@@ -13,12 +23,19 @@ export default {
     setRating(star) {
       this.rating = star;
     },
-    submitReview() {
-      console.log('Рейтинг:', this.rating);
-      console.log('Комментарий:', this.comment);
-      this.rating = 0;
-      this.comment = '';
-    }
+    async submitReview() {
+      const requestBody = {
+        id: generateGUID(),
+        text: this.comment,
+        rating: this.rating,
+        movieId: this.movieId,
+        userId: localStorage.getItem("userId"),
+        createdAt: generateNowISODateTime()
+      };
+      await putMovieFeedback(requestBody).then();
+      // window.location.reload();
+    },
+
   }
 };
 </script>

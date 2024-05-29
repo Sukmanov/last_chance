@@ -50,7 +50,7 @@ export default {
 <template>
   <div>
     <div class="comments-list" v-for="comment1 in paginatedComments" :key="comment1.id">
-      <comment :Nickname="comment1.username" :Comment="comment1.comment"></comment>
+      <comment :Nickname="comment1.username" :Comment="comment1.text"></comment>
     </div>
     <div class="pagination">
       <button @click="prevPage" :disabled="numPage === 1">Previous</button>
