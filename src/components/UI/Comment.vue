@@ -11,6 +11,12 @@
         type: String,
         required: true,
       }
+    },
+
+    data() {
+      return {
+        isAdmin: true,
+      }
     }
 
   }
@@ -20,6 +26,9 @@
   <div class="comment">
     <span id="nickname">{{ Nickname }}</span>
     <p id="comment-text">{{Comment}}</p>
+    <div id="film__delete-button" v-if="isAdmin">
+      <my-button-1 :textButton="'Удалить'"></my-button-1>
+    </div>
   </div>
 </template>
 
