@@ -11,7 +11,14 @@
         type: String,
         required: true,
       }
+    },
+
+    data() {
+      return {
+        isAdmin: true,
+      }
     }
+
   }
 
 
@@ -21,6 +28,9 @@
   <div class="achievement">
     <span id="achievement-name">{{Name}}</span>
     <p id="achievement-text">{{Description}}</p>
+    <div id="film__delete-button" v-if="isAdmin">
+      <my-button-1 id="achievement__btn" :textButton="'Удалить'"></my-button-1>
+    </div>
   </div>
 </template>
 
@@ -49,6 +59,10 @@
   font-weight: 200;
   font-family: "Rubik", sans-serif;
   color: white;
+}
+
+#achievement__btn {
+  width: 100%;
 }
 
 </style>
