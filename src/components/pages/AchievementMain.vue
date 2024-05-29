@@ -5,24 +5,16 @@
 <template>
   <top-header></top-header>
   <div class="container-achieves">
+
     <div id="daily-achievements">
 
       <div id="div-type">
-        <span id="type-achieves">Еженедельные задания</span>
+        <span id="type-achieves">Ачивки</span>
       </div>
 
       <achievement-list id="achievement-grid"></achievement-list>
-      <my-button-1 @click="$router.push('/DailyAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
     </div>
-    <div id="daily-achievements">
 
-      <div id="div-type">
-        <span id="type-achieves">Постоянные задания</span>
-      </div>
-
-      <achievement-list id="achievement-grid"></achievement-list>
-      <my-button-1 @click="$router.push('/DailyAchievementCatalog')" id="watch-all" :textButton="'посмотреть все'"></my-button-1>
-    </div>
   </div>
 
   <bottom-contacts></bottom-contacts>
