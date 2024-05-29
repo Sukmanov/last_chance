@@ -28,8 +28,8 @@ export default {
     <div id="film-page-info">
       <span id="film-name">{{ FilmName }}</span>
 
-      <div id="directors">
-        <span class="label">Режисеры:</span>
+      <div id="filmInfo__directors">
+        <span class="filmInfo__label">Режисеры:</span>
         <ul>
           <li v-for="(director, index) in FilmDirectors" :key="index">{{ director }}</li>
         </ul>
@@ -67,7 +67,7 @@ export default {
   color: white;
 }
 
-#directors, #actors {
+#filmInfo__directors, #actors {
   font-size: 20px;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
@@ -75,7 +75,7 @@ export default {
   margin: 10px 0;
 }
 
-.label {
+.filmInfo__label {
   font-weight: bold;
 }
 
