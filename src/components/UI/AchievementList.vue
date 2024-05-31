@@ -20,34 +20,96 @@
     data() {
       return {
         userChallenges: [],
-        arguments: [
-          {id: 1, name: 'Achievement 1', text: 'Achievement 1 text'},
-          {id: 2, name: 'Achievement 2', text: 'Achievement 2 text'},
-          {id: 3, name: 'Achievement 3', text: 'Achievement 3 text'},
-        ]
+        numPage: 1,
+        limit: 9,
+      }
+    },
+    prevPage() {
+      if (this.numPage > 1) {
+        this.numPage--;
+      }
+    },
+    goToPage(page) {
+      if (page >= 1 && page <= this.totalPages) {
+        this.numPage = page;
       }
     }
   }
 </script>
 
 <template>
-  <div class="list">
-    <div class="achievement-list" v-for="userChallenge in userChallenges" :key="userChallenge.id">
-      <achievement :achievement="userChallenge" id="challenge"></achievement>
+  <div>
+    <div class="list">
+      <div class="achievement-list" v-for="userChallenge in userChallenges" :key="userChallenge.id">
+        <achievement :achievement="userChallenge"></achievement>
+      </div>
+    </div>
+    <div class="pagination">
+      <button @click="prevPage"
+              :disabled="numPage === 1"
+              id="page-btn"
+      >Previous</button>
+      <button
+          v-for="page in totalPages"
+          :key="page"
+          @click="goToPage(page)"
+          :class="{ active: numPage === page }"
+          id="page-btn"
+      >
+        {{ page }}
+      </button>
+      <button @click="nextPage"
+              :disabled="numPage === totalPages"
+              id="page-btn"
+      >Next</button>
     </div>
   </div>
 
 </template>
 
 <style>
-
-.list{
+.list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 60%;
   margin: 0 auto;
 }
 
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
 
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+}
+
+#page-btn {
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: grey;
+  background: transparent;
+}
+
+#page-btn:hover {
+  text-decoration: underline;
+}
 </style>

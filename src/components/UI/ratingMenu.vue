@@ -1,6 +1,11 @@
 <script>
   export default {
     name: 'rating-menu',
+    data() {
+      return{
+        rating: (Math.random() * (10 - 5) + 5).toFixed(1),
+      }
+    }
   }
 </script>
 
@@ -9,8 +14,7 @@
     <div id="left-rating">
 
       <div id="rate">
-
-          <span id="number-rate">9</span>
+          <span id="number-rate">{{rating}}</span>
           <img src="https://i.yapx.ru/XeOZr.png" alt="" id="image">
       </div>
 
@@ -20,8 +24,8 @@
 
     <div id="right-rating">
       <div id="stars-percent">7-10 ★ 34%</div>
-      <div id="stars-percent">4-6 ★ 63%</div>
-      <div id="stars-percent">1-3 ★ 12%</div>
+      <div id="stars-percent">4-6 ★ 53%</div>
+      <div id="stars-percent">1-3 ★ 13%</div>
     </div>
   </div>
 </template>

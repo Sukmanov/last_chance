@@ -11,6 +11,7 @@ import ConstAchievementsCatalog from "@/components/pages/ConstAchievementsCatalo
 import ChangePassword from "@/components/pages/ChangePassword.vue";
 import PersonalProfile from "@/components/pages/PersonalProfile.vue";
 import Profile from "@/components/pages/Profile.vue"
+import Admin from "@/components/pages/admin.vue"
 
 
 const routes = [
@@ -68,6 +69,11 @@ const routes = [
         name: 'Profile',
         component: Profile,
     },
+    {
+        path: '/admin',
+        name: 'admin',
+        component: Admin,
+    },
 
 ]
 
@@ -75,5 +81,10 @@ const router = createRouter({
     routes,
     history: createWebHistory(process.env.BASE_URL)
 })
+
+router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0); // Прокрутка вверх при каждом переходе
+    next();
+});
 
 export default router;

@@ -22,8 +22,8 @@
 </script>
 
 <template>
-  <div class="comments-list" v-for="comment1 in comments2">
-    <comment :Nickname="comment1.username" :Comment="comment1.comment"></comment>
+  <div class="comments-list" v-for="comment1 in comments">
+    <comment :Rating="comment1.rank" :Nickname="comment1.username" :Comment="comment1.comment"></comment>
   </div>
 </template>
 

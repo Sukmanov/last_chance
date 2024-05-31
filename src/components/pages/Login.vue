@@ -13,6 +13,13 @@
           localStorage.setItem("userId", authData.id);
           localStorage.setItem("token", authData.accessToken);
           localStorage.setItem("isAuth", true);
+          console.log(authData.login)
+          if (authData.name === "admin") {
+            localStorage.setItem("isAdmin", true);
+          } else {
+            localStorage.setItem("isAdmin", false);
+          }
+
           this.$router.push("/");
         } else {
           ElMessage({
@@ -40,7 +47,7 @@
   <div class="login-container">
     <span id="text-login">Войдите в свой аккаунт</span>
     <input v-model="loginInput" placeholder="Логин" class="input-field">
-    <input v-model="passwordInput" placeholder="Пароль" class="input-field">
+    <input type="password" v-model="passwordInput" placeholder="Пароль" class="input-field">
     <my-button-2
         textButton="Забыли пароль?"
         id="forget-pass-button"

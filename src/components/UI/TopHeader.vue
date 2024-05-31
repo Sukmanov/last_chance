@@ -8,12 +8,17 @@ export default {
   components: {MyButton2},
 
   methods: {
-    Search() {
+    async Search() {
       console.log(this.searchParam);
       if (this.$router.path !== '/MovieCatalog') {
-        this.$router.push({ path: `/MovieCatalog`, params: { name: this.searchParams } });
+        localStorage.setItem("searchParam", this.searchParam);
+        this.$router.push({
+          path: '/MovieCatalog',
+          query: { search: this.searchParam }
+        });
       } else {
-
+        const componentCatalog = this.$root.$refs.MovieCatalog;
+        componentCatalog.filteredFilms = await getMoviesByName();
       }
 
     },
@@ -44,14 +49,24 @@ export default {
       <button id="film-page-navi" @click="$router.push('/')">
         <img src="https://i.yapx.ru/XeOOO.png" alt="" id="image">
       </button>
-
     </div>
 
     <div class="top-header-elems">
-      <div class="search-container">
-        <my-input-1 v-model="searchParam" id="search-input" :nameInput="'Поиск'"></my-input-1>
-        <my-button-2 id="search-button" :textButton="'Поиск'" @click="Search"></my-button-2>
-      </div>
+      <input
+          v-model="searchParam"
+          @input="inputTitle"
+          @keyup.enter="Search"
+          :placeholder="'Поиск'"
+          type="text"
+          id="top-header__input"
+          autocomplete=""
+      >
+    </div>
+
+    <div class="top-header-elems">
+      <button id="film-page-navi" @click="$router.push('/AchievementMain')">
+        <img src="https://i.yapx.ru/XfZyR.png" alt="" id="image">
+      </button>
     </div>
 
     <div class="top-header-elems">
@@ -80,6 +95,19 @@ export default {
 #image {
   width: 80px;
   height: 80px;
+  cursor: pointer;
+}
+#top-header__input {
+  width: 300px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 300;
+
+  color: grey;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  border: none;
+  padding: 0 5px 0 5px;
 }
 
 #film-page-navi {
@@ -87,15 +115,5 @@ export default {
   border: none;
 }
 
-.search-container {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-}
-
-#search-input {
-  margin-top: 7px;
-  margin-right: 10px;
-}
 
 </style>

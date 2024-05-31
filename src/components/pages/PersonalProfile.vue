@@ -3,13 +3,17 @@
   import MyInput1 from "@/components/UI/MyInput1.vue";
   import MyButton1 from "@/components/UI/MyButton1.vue";
   import EditProfile from "@/components/UI/EditProfile.vue";
+  import BottomContacts from "@/components/UI/BottomContacts.vue";
+  import AchievementList from "@/components/UI/AchievementList.vue";
+  import MyButton2 from "@/components/UI/MyButton2.vue";
+  import TopHeader from "@/components/UI/TopHeader.vue";
 
   export default {
-    components: {EditProfile, MyButton1, MyInput1},
+    components: {TopHeader, MyButton2, AchievementList, BottomContacts, EditProfile, MyButton1, MyInput1},
     data() {
       return {
         level: 7,
-        user: null,
+        user: {},
         isEditing: false,
         editedName: '',
         editedLogin: '',
@@ -27,6 +31,12 @@
     methods: {
       showEditPage(){
         this.isEditing = true;
+      },
+      goToTelegram(tgId) {
+        fetch('http://t.me/' + tgId.substring(1), {
+          method: 'GET',
+          mode: 'cors',
+        }).then(window.location.href = "http://t.me/" + tgId.substring(1));
       }
     }
   }
@@ -49,7 +59,7 @@
       <div id="profile-bio">
         <span id="level">Уровень:{{user?.level}}</span>
         <p id="bio-description">Имя: {{user?.name}}</p>
-        <my-button-2 :textButton="'телеграмм'"></my-button-2>
+        <my-button-2 :textButton="'Телеграмм'" @click="goToTelegram(user?.telegram)"></my-button-2>
         <my-button-2 id="edit-profile" :textButton="'Редактировать профиль'" @click="showEditPage"></my-button-2>
       </div>
 
@@ -59,11 +69,11 @@
 
   </div>
 
-  <div id="achievements-grid">
-    <span id="achievements-last">Последние ачивки</span>
-    <achievement-list :challenges="user?.userChallenges" id="achievement-grid"></achievement-list>
-    <my-button-1 id="show-all-button" :textButton="'Смотреть все'"></my-button-1>
-  </div>
+<!--  <div id="achievements-grid">-->
+<!--    <span id="achievements-last">Последние ачивки</span>-->
+<!--    <achievement-list :challenges="user?.userChallenges" id="achievement-grid"></achievement-list>-->
+<!--    <my-button-1 id="show-all-button" :textButton="'Смотреть все'"></my-button-1>-->
+<!--  </div>-->
   <bottom-contacts></bottom-contacts>
 
 </template>

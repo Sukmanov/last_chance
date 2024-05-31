@@ -29,6 +29,7 @@
   font-size: 20px;
   font-weight: 300;
   font-family: "Rubik", sans-serif;
+  cursor: pointer;
 }
 
 .button2:hover {

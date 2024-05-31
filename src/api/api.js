@@ -1,6 +1,49 @@
 const URL = "http://localhost:5123";
 const axios = require('axios');
 
+export async function deleteChallenge(challengeId) {
+    try {
+        await axios.delete(URL + `/api/challenge/${challengeId}`);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getChallenges() {
+    try {
+        const response = await axios.get(URL + "/api/challenge");
+        return  response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getActor(actorId) {
+    try {
+        const response = await axios.get(URL + `/api/actor/${actorId}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function deleteComment(commentId) {
+    try {
+        await axios.delete(URL + `/api/movie-feedback/${commentId}`);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getDirector(directorId) {
+    try {
+        const response = await axios.get(URL + `/api/director/${directorId}`);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export async function getChallenge(challengeId) {
     try {
         const response = await axios.get(URL + `/api/challenge/${challengeId}`);

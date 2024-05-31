@@ -20,7 +20,7 @@ export default {
       editedName: '',
       editedLogin: '',
       editedTelegramId: '',
-      editedAvatarFile: null,
+      editedAvatarFile: {},
       editedAvatarId: '',
       editedPassword : '',
     }

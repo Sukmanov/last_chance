@@ -1,9 +1,15 @@
 <script>
   import {ElProgress, ElButton, ElIcon, ElButtonGroup} from "element-plus";
-  import {ArrowLeft, ArrowLeftBold, ArrowRight, ArrowRightBold} from '@element-plus/icons-vue'
+  import {ArrowLeft, ArrowLeftBold, ArrowRight, ArrowRightBold, Delete} from '@element-plus/icons-vue'
+  import {deleteChallenge} from "@/api/api";
 
   export default {
     name: 'achievement',
+    computed: {
+      Delete() {
+        return Delete
+      }
+    },
     components: {
       ArrowRightBold,
       ArrowLeftBold,
@@ -13,13 +19,15 @@
       ElButton,
       ElIcon,
       ElButtonGroup,
+      Delete
     },
 
     props: {
-      achievement: null
+      achievement: {}
     },
     data() {
       return {
+        isAdmin: true,
         progress: 0,
         step: 100 / this.achievement.goal
       }
@@ -52,7 +60,11 @@
           return '#e6a23c'
         }
         return '#67c23a'
-      }
+      },
+      async clickOnDelete() {
+        await deleteChallenge(this.achievement.id);
+        window.location.reload();
+      },
     }
   }
 
@@ -61,7 +73,11 @@
 
 <template>
   <div class="achievement">
-    <span id="achievement-name">{{this.achievement?.task}}</span>
+
+    <div class="achievement-container">
+      <span id="achievement-name">{{this.achievement?.task}}</span>
+      <el-button id="achievement__btn" type="danger" :icon="Delete" circle v-if="isAdmin === true" @click="clickOnDelete"></el-button>
+    </div>
     <p id="achievement-text">Опыт: {{this.achievement?.experience}}</p>
 
     <div id="progress-container">
@@ -154,6 +170,15 @@
   font-weight: 200;
   font-family: "Rubik", sans-serif;
   color: white;
+}
+
+.achievement-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#achievement__btn {
+  margin: -10px -10px auto auto;
 }
 
 </style>
